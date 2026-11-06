@@ -1,0 +1,16 @@
+// Docker හී Folder සෑදීමට නොහැකි විට
+	docker exec -it nwrevenue_web chmod -R 777 /var/www/html
+
+
+#Extension එක සාර්ථකව Install වූ පසු, Terminal එකේ පහත විධානය ලබා දී පරික්ෂා කළ හැක:
+php -m | grep soap
+
+# Terminal එකේ පහත විධානය ලබා දී Container එක stop කරගන්න:
+docker-compose down
+
+#Dockerfile එක Save කර Terminal එකේ පහත විධානය ලබා දී Container එක Rebuild කරගන්න:
+docker-compose up -d --build
+
+
+
+

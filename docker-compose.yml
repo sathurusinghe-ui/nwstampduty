@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  # 1. Reverse Proxy (HTTPS සඳහා)
+  reverse-proxy:
+    image: nginx:alpine
+    container_name: reverse_proxy
+    ports:
+      - "80:80"     # HTTP
+      - "443:443"   # HTTPS
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+    depends_on:
+      - web
+
+  # 2. ඔබගේ PHP Web Application එක
+  web:
+    build: .
+    container_name: nwrevenue_web
+    volumes:
+      - .:/var/www/html
+      - ./phpuploads.ini:/usr/local/etc/php/conf.d/phpuploads.ini
+    depends_on:
+      - db
+
+  # 3. Database Service එක
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "1979@7#21$$Sa"
+      MYSQL_DATABASE: nwrevenue_db
+    command: --max_allowed_packet=512M
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # 4. phpMyAdmin GUI එක
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_gui
+    ports:
+      - "8001:80"
+    environment:
+      PMA_HOST: db
+      UPLOAD_LIMIT: 512M
+      MAX_EXECUTION_TIME: 600
+      MYSQL_ROOT_PASSWORD: "1979@7#21$$Sa"
+
+volumes:
+  db_data:
