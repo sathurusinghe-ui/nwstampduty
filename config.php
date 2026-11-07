@@ -11,15 +11,15 @@ $provweb = 'localhost'; // 'notarysl.eprevenue.com';
 $provwebhttp ='https://localhost'; //'https://notarysl.eprevenue.com';
 $dbprepix = ''; //'u578066180_'; 
 
-$smsusername = 'esmsusr_sBhvyrib'; // SMS Gatway Username
-$smspassword = 'BLpqc1Ah'; // SMS Gatway Password
+$smsusername = 'esmsu_Bhvyrib'; // SMS Gatway Username
+$smspassword = 'BLpqh'; // SMS Gatway Password
 $smsmask = 'SPPRD';  // SMS Mask
 
 $provnoreply = ''; // 'noreply@eprevenue.com'; // Own Domain Noreply Email Address
 
 // For Send Email Via Gmail
-$gmailusername = 'sathurusinghe80@gmail.com'; // Gmail Address
-$gmailpassword = 'gqri gcjz ipwh qtwc'; // Gmail App Password
+$gmailusername = 'sathurusingh@gmail.com'; // Gmail Address
+$gmailpassword = 'gqgcpwh qtwc'; // Gmail App Password
 $gmailheadline = 'Stamp Duty System - North Western Province'; // Head Line For Gmail
 
 $whatsappno = '0719207422'; // Whats app No
