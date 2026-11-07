@@ -18,8 +18,8 @@ try {
     $mail->SMTPAuth   = true;
     
     // ඔබගේ Gmail ලිපිනය සහ සාදාගත් 16-digit App Password එක
-    $mail->Username   = 'sathurusinghe80@gmail.com'; 
-    $mail->Password   = 'gqri gcjz ipwh qtwc'; // 👈 මෙතනට App Password එක දාන්න
+    $mail->Username   = 'she80@gmail.com'; 
+    $mail->Password   = 'gqri qtwc'; // 👈 මෙතනට App Password එක දාන්න
     
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
     $mail->Port       = 587;
@@ -34,8 +34,8 @@ try {
     );
 
     // --- RECIPIENTS ---
-    $mail->setFrom('sathurusinghe80@gmail.com', 'System Admin');
-    $mail->addAddress('sathurusinghe@gmail.com'); 
+    $mail->setFrom('sathure80@gmail.com', 'System Admin');
+    $mail->addAddress('sasinghe@gmail.com'); 
 
     // --- CONTENT ---
     $mail->isHTML(true);
